@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import 'nullStyle';
+
+%container {
+    margin: 0 auto;
+    max-width: 1280px;
+    height: auto;
+    padding: 0;
+}
+
+%text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2A2A2A;
+}
+
+@mixin fontz ($font,
+    $style,
+    $weight,
+    $size,
+    $line) {
+    font-family: $font;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+}
+
+@mixin flex ($direction) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
+
+@mixin margin ($margin) {
+    margin: $margin;
+}
+
+header,
+footer {
+    @extend %container;
+}
+
+header {
+    @include margin(40px auto);
+    @include flex (row);
+    @extend %container;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        @include flex(row)
+    }
+
+    li {
+        margin-right: 40px;
+    }
+
+    .left-nav,
+    .right-nav {
+        @include flex(row);
+        justify-content: space-between
+    }
+
+    .left-nav {
+        align-items: center;
+    }
+
+    .right-nav {
+        width: 100px;
+        @include fontz('Roboto', normal, 400, 16px, 20px)
+    }
+
+    a {
+        @include fontz('Roboto', normal, 400, 16px, 20px);
+        color: #1a1a1a
+    }
+
+}
+
+h1 {
+    @include fontz('Roboto', normal, 400, 37px, 21px);
+    color: #1a1a1a;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+
+.oblozka {
+    display: block;
+    background-image: url("/img/oblozka.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 600px;
+    margin-bottom: 13px;
+    min-width: 1436px;
+}
+
+
+.text1 {
+    @extend %container;
+    color: #fff;
+    @include fontz('Roboto', normal, 400, 18px, 28px);
+    @include flex(column);
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 500px;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+
+.gallery {
+    @extend %container;
+    @include flex(column);
+    min-width: 1430px;
+
+    nav {
+        margin: 27px auto;
+
+        ul {
+            @include flex(row);
+            justify-content: center;
+            align-items: center;
+
+            li {
+                margin-left: 48px;
+                @include fontz('Roboto', normal, 400, 17px, 27px);
+                color: #1a1a1a;
+            }
+        }
+
+        a {
+            @include fontz('Roboto', normal, 400, 17px, 27px);
+            color: #1a1a1a
+        }
+    }
+
+    // .gallery__katalog
+
+    &__katalog {
+        display: grid;
+        grid-template-columns: minmax(200px, 300px) minmax(200px, 300px) minmax(200px, 300px) minmax(200px, 300px);
+        grid-template-rows: minmax(320px, 420px) minmax(320px, 420px);
+        gap: 24px;
+        justify-content: center;
+
+        img {
+            width: 300px;
+        }
+    }
+
+    .btn1 {
+        background: #1A1A1A;
+        border: 1px solid #1A1A1A;
+        box-sizing: border-box;
+        border-radius: 0px;
+        margin: 100px auto;
+
+        a {
+            @include fontz('Roboto', normal, 400, 20px, 56px);
+            color: #F7F7F7;
+            padding: 0 51px;
+        }
+    }
+}
+
+.gallery-wrapper {
+    @include flex(column);
+
+    p {
+        @include fontz('Roboto', normal, 400, 15px, 18px)
+    }
+
+    .dop {
+        color: #a8a8a8;
+    }
+
+    .price {
+        @include fontz('Roboto', normal, 400, 13px, 13px)
+    }
+
+    .textp {
+        @include flex(row);
+        margin-top: 11px;
+    }
+}
+
+
+.oblozka2 {
+
+    background-image: url("/img/oblozka2.png");
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    margin-bottom: 100px;
+    min-width: 1436px;
+
+}
+
+.gallery-wrapper:nth-child(9) {
+    display: none;
+}
+
+.oblozka2__content {
+    height: 600px;
+    @extend %container;
+    @include flex(row);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gallery2-with-text {
+    min-width: 1425px;
+}
+
+.text {
+
+    color: #F7F7F7;
+
+    &__title {
+        @include fontz('Roboto', normal, 400, 35px, 54px);
+        width: 360px;
+    }
+
+    &__button {
+        background: #7E6E45;
+        border: 1px solid #7E6E45;
+        box-sizing: border-box;
+        border-radius: 0px;
+        color: #F7F7F7;
+        @include fontz('Roboto', normal, 400, 15px, 40px);
+        padding: 0 32px;
+        margin-top: 13px;
+        margin-bottom: 17px
+    }
+
+    &__dop {
+        text-decoration: underline;
+        @include fontz('Roboto', normal, 400, 15px, 22px);
+    }
+
+}
+
+.circle {
+    margin-bottom: 30%;
+
+    p {
+        color: #EAE7D9;
+        @include fontz('Roboto', normal, 400, 12px, 21px);
+        width: 59px;
+
+        margin-top: -80px;
+        margin-left: 20px;
+        text-align: center
+    }
+}
+
+.text2 {
+    @include fontz('Roboto', normal, 400, 30px, 36px);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 630px;
+    margin-bottom: 92px;
+}
+
+.gallery2 {
+    @extend %container;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr;
+    gap: 75px;
+
+    p {
+        margin-top: 7px;
+    }
+}
+
+.adaptive-img {
+    display: none;
+}
+
+.footer {
+    @extend %container;
+    @include flex(row);
+    margin-top: 80px;
+    justify-content: space-between;
+    @include fontz('Roboto', normal, 400, 15px, 15px);
+    padding-bottom: 100px;
+
+    li {
+        margin-top: 14px;
+    }
+}
+
+.footlogo {
+    @include flex(row);
+
+    p {
+        text-align: right;
+        width: 230px;
+        @include fontz('Roboto', normal, 400, 15px, 21px);
+        margin-bottom: 8px;
+        margin-right: 25px;
+    }
+
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    min-height: 350px;
+    background-color: #e4e4e4;
+    padding: 40px;
+    //.modal__close&__close:;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+
+    &__close {
+        position: absolute;
+        top: -10px;
+        right: -35px;
+        font-size: 40px;
+        line-height: 40px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    // .modal__subtitle
+
+    &__subtitle {
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    // .modal__descr
+
+    &__descr {
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+.modal_mini {
+    min-height: 70px;
+}
+
+#consultation,
+#thanks {
+    display: none;
+
+}
+
+.feed-form {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+input {
+    border: none;
+    height: 50px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+input:nth-child(3) {
+    margin-bottom: 35px;
+}
+
+@media(max-width:1440px) {
+
+    header {
+        min-width: 1425px;
+        padding: 0 1%;
+    }
+
+    .gallery__katalog {
+        gap: 16px;
+        justify-content: center;
+    }
+}
+
+@media(max-width:1024px) {
+
+    .gallery,
+    .text1,
+    .oblozka2__content,
+    .footer {
+        min-width: 1425px;
+        padding: 0 1%;
+    }
+
+    .footer {
+        padding-bottom: 100px;
+    }
+
+    .text1 {
+        padding-top: 500px;
+    }
+
+    .gallery-wrapper:nth-child(9) {
+        display: block;
+    }
+
+    .gallery__katalog {
+        display: grid;
+        grid-template-columns: minmax(250px, 350px) minmax(250px, 350px) minmax(250px, 350px);
+        grid-template-rows: minmax(370px, 470px) minmax(370px, 470px) minmax(370px, 470px);
+        gap: 24px;
+        justify-content: center;
+
+        img {
+            width: 350px;
+        }
+    }
+
+    .gallery2 {
+        display: grid;
+        grid-template-columns: 370px 370px 370px;
+        grid-template-rows: 1fr;
+        gap: 24px;
+        margin-right: -5px;
+
+        img {
+            width: 370px;
+        }
+    }
+
+    .noadaptive-img {
+        display: none;
+    }
+
+    .adaptive-img {
+        display: block;
+    }
+}
+
+@media(max-width:900px) {
+    header {
+
+        a,
+        p {
+            @include fontz('Roboto', normal, 400, 19px, 23px);
+            color: #1a1a1a
+        }
+    }
+
+    .gallery {
+        nav {
+            a {
+                @include fontz('Roboto', normal, 400, 22px, 18px);
+            }
+        }
+    }
+
+    .h1,
+    .underlined,
+    .text__dop {
+        @include fontz('Roboto', normal, 400, 22px, 18px);
+        margin-bottom: 15px;
+    }
+
+    .text__button {
+        @include fontz('Roboto', normal, 400, 22px, 60px);
+        padding: 0 32px;
+        margin-top: 13px;
+        margin-bottom: 17px
+    }
+
+
+    .gallery__katalog {
+        display: grid;
+        grid-template-columns: minmax(200px, 400px) minmax(200px, 400px) minmax(200px, 400px);
+        grid-template-rows: minmax(420px, 520px) minmax(420px, 520px) minmax(420px, 520px);
+        gap: 24px;
+        justify-content: center;
+
+        p {
+            @include fontz('Roboto', normal, 400, 19px, 18px);
+        }
+
+        .price {
+            @include fontz('Roboto', normal, 400, 18px, 25px);
+            color: black;
+        }
+
+        img {
+            width: 400px;
+        }
+    }
+
+    .gallery2 {
+        margin-right: 130px;
+        grid-template-columns: 450px 450px 450px;
+        color: black;
+
+        img {
+            width: 450px;
+        }
+    }
+
+    .text1 {
+        @include fontz('Roboto', normal, 400, 19px, 28px);
+    }
+
+    .footer {
+        @include fontz('Roboto', normal, 400, 20px, 20px);
+        padding-bottom: 100px;
+        color: black;
+
+        li {
+            margin-top: 14px;
+        }
+    }
+
+    .footlogo {
+        p {
+            @include fontz('Roboto', normal, 400, 20px, 21px);
+            color: black;
+        }
+
+
+    }
+}
+
+@media(max-width: 610px) {
+    header {
+        min-width: 1200px;
+
+        a,
+        p {
+            @include fontz('Roboto', normal, 400, 24px, 23px);
+            color: #1a1a1a
+        }
+
+        .right-nav {
+            p {
+                margin-left: -15px;
+                margin-right: 15px;
+            }
+        }
+
+        .cart {
+            width: 30px;
+        }
+    }
+
+
+    .oblozka,
+    .oblozka2,
+    .gallery2-with-text,
+    .footer,
+    .oblozka2__content,
+    .gallery,
+    .text1 {
+        min-width: 1200px;
+    }
+
+    .gallery {
+        .btn1 {
+            a {
+                @include fontz('Roboto', normal, 400, 40px, 100px);
+                color: #F7F7F7;
+                padding: 0 100px;
+            }
+        }
+
+        nav {
+            a {
+                @include fontz('Roboto', normal, 400, 24px, 23px);
+            }
+        }
+    }
+
+    .gallery__katalog {
+        display: grid;
+        grid-template-columns: minmax(250px, 450px) minmax(250px, 450px);
+        grid-template-rows: minmax(470px, 570px) minmax(470px, 570px) minmax(470px, 570px) minmax(470px, 570px);
+        gap: 70px;
+        justify-content: center;
+        margin-left: 40px;
+
+        img {
+            width: 440px;
+        }
+
+        p {
+            @include fontz('Roboto', normal, 400, 24px, 23px);
+        }
+    }
+
+    .footer {
+        @include fontz('Roboto', normal, 400, 30px, 20px);
+        padding-bottom: 100px;
+        color: black;
+
+        li {
+            margin-top: 30px;
+        }
+    }
+
+    .footlogo {
+        p {
+            @include fontz('Roboto', normal, 400, 30px, 40px);
+            color: black;
+        }
+
+        img {
+            height: 150px;
+        }
+
+    }
+
+    .text__title {
+        width: 500px;
+        margin-bottom: 40px
+    }
+
+    .text__button {
+        @include fontz('Roboto', normal, 400, 40px, 100px);
+    }
+
+    .text__title,
+    .text2 {
+        @include fontz('Roboto', normal, 400, 40px, 50px);
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .gallery2 {
+        margin-right: 70px;
+        grid-template-columns: 600px;
+        grid-template-rows: 800px 800px 800px;
+        color: black;
+        justify-content: center;
+
+        p {
+            margin-top: 40px;
+            @include fontz('Roboto', normal, 400, 40px, 18px)
+        }
+
+        img {
+            width: 600px;
+        }
+    }
+
+    .gallery-wrapper:nth-child(9) {
+        display: none;
+    }
+
+}
+
+@media(max-width: 425px) {
+    header {
+        .h1 {
+            @include fontz('Roboto', normal, 400, 100px, 18px);
+        }
+    }
+
+    .gallery__katalog {
+        display: grid;
+        grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
+        grid-template-rows: minmax(420px, 520px) minmax(420px, 520px) minmax(420px, 520px) minmax(420px, 520px);
+        gap: 24px;
+        justify-content: center;
+        margin-right: 20px;
+
+        p {
+            @include fontz('Roboto', normal, 400, 25px, 25px);
+        }
+
+        .price {
+            @include fontz('Roboto', normal, 400, 25px, 25px);
+            color: black;
+        }
+
+
+        img {
+            width: 400px;
+        }
+    }
+
+
+    .h1,
+    .underlined {
+        @include fontz('Roboto', normal, 400, 30px, 28px);
+    }
+
+    .oblozka,
+    .oblozka2,
+    .gallery2-with-text,
+    .footer,
+    .oblozka2__content,
+    .gallery,
+    .text1,
+    header {
+        min-width: 1000px;
+    }
+}
